@@ -1,0 +1,27 @@
+.project-img {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 10s ease;
+    position: relative;
+}
+
+.project-img:hover {
+    background-position: bottom center;
+}
+
+.project-img::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(13, 13, 13, 0.485);
+    transition: .3s;
+}
+
+.project-img:hover::before {
+    background: transparent;
+}
