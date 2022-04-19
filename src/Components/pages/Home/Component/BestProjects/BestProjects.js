@@ -3,20 +3,22 @@ import { Box } from '@mui/system';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { allData } from '../../../../../MangeState/dataSlice';
 import ProjectCard from '../ProjectCard/ProjectCard';
 
 const BestProjects = () => {
     const [data, setData] = useState([]);
     const [show, setShow] = useState(3);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const { windowLoad } = useSelector(allData)
 
     useEffect(() => {
-        axios.get('http://localhost:5000/bestprojects').then(res => {
+        axios.get('https://glacial-stream-21604.herokuapp.com/bestprojects').then(res => {
             setData(res.data);
             setLoading(false);
         })
     }, [])
-    console.log(data);
     return (
         <Container className="pt-5  ">
             <div className="bol-3 bol"></div>
@@ -24,7 +26,7 @@ const BestProjects = () => {
             <Grid container spacing={15}>
 
                 {
-                    !loading ? data.slice(0, show).map((single, index) => <ProjectCard {...single} index={index}></ProjectCard>) : <Grid item data-aos="fade-up" container spacing={0} sx={{
+                    !windowLoad || !loading ? data.slice(0, show).map((single, index) => <ProjectCard {...single} key={single._id} index={index}></ProjectCard>) : <Grid item data-aos="fade-up" container spacing={0} sx={{
                         mb: { xs: 0, }, flexDirection: 'row'
                     }} >
                         <Grid item md={7} xs={12} sx={{ width: '100%' }}>

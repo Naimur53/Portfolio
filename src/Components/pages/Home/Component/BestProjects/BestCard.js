@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material'
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
@@ -24,13 +23,14 @@ const BestCard = ({ _id, name, title, img, live_link, code_link, project_type, t
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        axios.put(`http://localhost:5000/bestprojects/${_id}`, data)
+        data.technology = data.technology.split(',')
+        axios.put(`https://glacial-stream-21604.herokuapp.com/bestprojects/${_id}`, data)
         console.log(data);
         handleClose();
         alert('added try to reload')
     };
     const handleDelete = () => {
-        axios.delete(`http://localhost:5000/bestprojects/${_id}`);
+        axios.delete(`https://glacial-stream-21604.herokuapp.com/bestprojects/${_id}`);
         alert('delete try to reload')
 
     }
@@ -91,7 +91,7 @@ const BestCard = ({ _id, name, title, img, live_link, code_link, project_type, t
 
                         <TextField color="warning" defaultValue={project_type} label="project type" sx={{ mb: 1 }} variant="standard" placeholder='project type' {...register("project_type", { required: true })} />
 
-                        {/* <TextField color="warning" defaultValue={technology?.join(',')} label="Technology" sx={{ mb: 1 }} variant="standard" placeholder='project type' {...register("technology", { required: true })} /> */}
+                        <TextField color="warning" defaultValue={technology?.join(',')} label="Technology" sx={{ mb: 1 }} variant="standard" placeholder='project type' {...register("technology", { required: true })} />
 
 
                         <input type="submit" className='btn btn-success' value='Update' />

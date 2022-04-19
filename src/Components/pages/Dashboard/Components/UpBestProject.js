@@ -5,7 +5,7 @@ import BestCard from '../../Home/Component/BestProjects/BestCard';
 const UpBestProject = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/bestprojects')
+        axios.get('https://glacial-stream-21604.herokuapp.com/bestprojects')
             .then(res => setData(res.data))
     }, [])
     return (

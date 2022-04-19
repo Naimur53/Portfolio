@@ -8,8 +8,8 @@ const NavBar = () => {
     const { windowLoad } = useSelector(allData)
     useEffect(() => {
         if (window.innerWidth < 500) {
+            setChange(true)
             setTimeout(() => {
-                setChange(true)
             }, 3000);
 
         } else {
@@ -35,9 +35,9 @@ const NavBar = () => {
 
     return (
         <div>
-            <nav id="nav" className="navbar navbar-expand-lg fixed-top navbar-dark  p-0 " style={{ background: change ? 'rgba(0, 0, 0,0.3)' : 'transparent', backdropFilter: change ? 'blur(5px)' : 'blur(0)' }}>
-                <div className="container">
-                    <a className="navbar-brand" data-aos="fade-right" data-aos-delay="100" href="#">
+            <nav id="nav" className="navbar navbar-expand-lg fixed-top navbar-dark  p-0 " data-aos="fade-down" data-aos-duration="3000" style={{ background: change ? 'rgba(0, 0, 0,0.3)' : 'transparent', width: '100vw', backdropFilter: change ? 'blur(5px)' : 'blur(0)', }}>
+                <div className='container'>
+                    <a className="navbar-brand" data-aos="fade-right" data-aos-delay="200" href="#">
                         <svg id="svg_wrapper" width="585" height="362" viewBox="0 0 585 362" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="585" height="362" />
@@ -49,7 +49,7 @@ const NavBar = () => {
                         </svg>
 
                     </a>
-                    <button className="navbar-toggler" data-aos="fade-left" type="button" data-bs-toggle="collapse"
+                    <button className="navbar-toggler " data-aos="fade-left" data-aos-delay="200" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

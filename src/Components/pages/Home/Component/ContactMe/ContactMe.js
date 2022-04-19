@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const ContactMe = () => {
@@ -44,75 +49,73 @@ const ContactMe = () => {
             });
     };
     return (
-        <section id='contact' class="contact-section py-5">
-            <div class="bol-4 bol"></div>
-            <div class="container  content-container">
-                <div class="row  " data-aos="fade-up">
-                    <div class="col-md-6  ">
+        <section id='contact' className="contact-section py-5">
+            <div className="bol-4 bol"></div>
+            <div className="container  content-container">
+                <div className="row  " data-aos="fade-up">
+                    <div className="col-md-6  ">
                         <form ref={form} id="contact-form" onSubmit={sendEmail}>
-                            <div class="row">
-                                <div class="col-md-6">
+                            <div className="row">
+                                <div className="col-md-6">
                                     <input required type="hidden" name="contact_number" />
-                                    <input class="w-100 p-3 rounded" required type="text" placeholder="Name"
+                                    <input className="w-100 p-3 rounded" required type="text" placeholder="Name"
                                         name="user_name" />
                                 </div>
-                                <div class="col-md-6">
-                                    <input class="w-100 p-3 rounded" required type="email" placeholder="Email"
+                                <div className="col-md-6">
+                                    <input className="w-100 p-3 rounded" required type="email" placeholder="Email"
                                         name="user_email" />
                                 </div>
-                                <div class="col-md-12">
-                                    <textarea class="w-100 mt-4 p-3 rounded" rows="7" name="message"
+                                <div className="col-md-12">
+                                    <textarea className="w-100 mt-4 p-3 rounded" rows="7" name="message"
                                         placeholder="Your message"></textarea>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-center mt-3">
+                            <div className="d-flex justify-content-center mt-3">
 
                                 {
-                                    loading ? <input class="text-center rounded text-white px-3 py-2 " value="Sending" type='button' /> : <input class="rounded text-white mb-2 px-3 py-2 " type="submit" value="Send Message" />
+                                    loading ? <input className="text-center rounded text-white px-3 py-2 " value="Sending" type='button' /> : <input className="rounded text-white mb-2 px-3 py-2 " type="submit" value="Send Message" />
                                 }
                             </div>
                         </form>
 
                     </div>
-                    <div class="col-md-6 ">
-                        <div class="row g-4">
-                            <div class="col-md-12">
-                                <div class="p-2 py-4 contact-box d-flex flex-column align-items-center justify-content ">
+                    <div className="col-md-6 ">
+                        <div className="row g-4">
+                            <div className="col-md-12">
+                                <div className="p-2 py-4 contact-box d-flex flex-column align-items-center justify-content ">
                                     <div
-                                        class="contact-icon-wrap d-flex justify-content-center align-items-center rounded-circle">
+                                        className="contact-icon-wrap d-flex justify-content-center align-items-center rounded-circle">
 
-                                        <i class="fas fs-3 fa-map-marker-alt"></i>
+                                        <LocationOnIcon></LocationOnIcon>
                                     </div>
-                                    <p class="mt-3">Munshigonj, Dhaka, Bangladesh</p>
+                                    <p className="mt-3">Munshigonj, Dhaka, Bangladesh</p>
 
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="p-2 py-4 contact-box d-flex flex-column align-items-center justify-content ">
+                            <div className="col-md-6">
+                                <div className="p-2 py-4 contact-box d-flex flex-column align-items-center justify-content ">
                                     <div
-                                        class="contact-icon-wrap d-flex justify-content-center align-items-center rounded-circle">
+                                        className="contact-icon-wrap d-flex justify-content-center align-items-center rounded-circle">
 
-                                        <i class=" fs-3 far fa-envelope"></i>
+                                        <MailOutlineIcon></MailOutlineIcon>
                                     </div>
-                                    <p class="mt-3">naimurrhman53@gmail.com</p>
+                                    <p className="mt-3">naimurrhman53@gmail.com</p>
 
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div className="col-md-6">
                                 <div
-                                    class="p-2 pt-4 h-100 contact-box d-flex flex-column align-items-center justify-content ">
+                                    className="p-2 pt-4 h-100 contact-box d-flex flex-column align-items-center justify-content ">
                                     <div
-                                        class="contact-icon-wrap d-flex justify-content-center align-items-center rounded-circle">
+                                        className="contact-icon-wrap d-flex justify-content-center align-items-center rounded-circle">
 
-                                        <i class="fas fa-handshake-slash"></i>
+                                        <ConnectWithoutContactIcon></ConnectWithoutContactIcon>
                                     </div>
-                                    <ul class="social d-flex justify-content-center ps-0 w-100 mt-3">
-                                        <li><a href="https://github.com/Naimur53"> <i class="fab fa-github mx-2"></i>
+                                    <ul className="social d-flex justify-content-center ps-0 w-100 mt-3">
+                                        <li><a href="https://github.com/Naimur53"> <GitHubIcon></GitHubIcon>
                                         </a></li>
-                                        <li><a href="https://www.facebook.com/naimur.rahman.39501789"><i
-                                            class="fab fa-facebook mx-2"></i></a></li>
-                                        <li><a href="https://www.linkedin.com/in/naimur-rahman-a56b83216/"><i
-                                            class="fab fa-linkedin-in mx-2"></i></a></li>
+                                        <li><a href="https://www.facebook.com/naimur.rahman.39501789"><FacebookIcon></FacebookIcon></a></li>
+                                        <li><a href="https://www.linkedin.com/in/naimur-rahman-a56b83216/"><LinkedInIcon></LinkedInIcon></a></li>
 
 
                                     </ul>

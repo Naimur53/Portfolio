@@ -11,7 +11,6 @@ const CustomCircular = ({ value, half, text }) => {
             threshold: window.innerWidth > 500 ? .1 : 1
         }
     }, [])
-    console.log(options);
     useEffect(() => {
         // creating observer
         const observer = new IntersectionObserver(entries => {

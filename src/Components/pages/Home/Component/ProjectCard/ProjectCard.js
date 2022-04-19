@@ -39,7 +39,7 @@ const ProjectCard = ({ index, code_link, img, live_link, name, project_type, tit
                     </Box>
                     <Box sx={{ my: 2 }}>
                         {
-                            technology?.map(single => <Typography variant='span ' color='#ffffffb5' sx={{ mx: 1, display: 'inline-block' }} fontFamily='Roboto Mono'>{single}</Typography>)
+                            technology?.map(single => <Typography key={single} variant='span ' color='#ffffffb5' sx={{ mx: 1, display: 'inline-block' }} fontFamily='Roboto Mono'>{single}</Typography>)
                         }
                     </Box>
                     <Box>

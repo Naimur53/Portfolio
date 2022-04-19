@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import SVG3DTagCloud from '3d-word-cloud';
-import { Parallax } from 'react-scroll-parallax';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import styled from 'styled-components';
 import Skills from '../Skills/Skills';
-import { Box, Stack, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 const SectionWipes2Styled = styled.div`
   overflow: hidden;
   width:100%;
@@ -79,7 +78,7 @@ const AboutMe = () => {
         var settings = {
             entries: entries,
             width: widthSize,
-            height: 600,
+            height: widthSize !== '300px' ? 600 : 300,
             radius: '65%',
             radiusMin: 75,
             bgDraw: true,
@@ -113,8 +112,6 @@ const AboutMe = () => {
             if (!myrotation.current?.children.length) {
 
                 svg3DTagCloud = new SVG3DTagCloud(myrotation.current, settings);
-                console.log(svg3DTagCloud)
-                console.log('i am call', myrotation, svg3DTagCloud);
             }
         }
         return () => {
@@ -122,17 +119,17 @@ const AboutMe = () => {
         }
     }, [myrotation.current, widthSize])
     return (
-        <section id="aboutme" class="py-5 about_me_section ">
+        <section id="aboutme" className="py-5 about_me_section ">
 
-            {/* <div class="bol-1 bol"></div>
-            <div class="bol-2 bol"></div> */}
-            <div class="container ">
+            {/* <div className="bol-1 bol"></div>
+            <div className="bol-2 bol"></div> */}
+            <div className="container ">
 
-                <div class="row">
+                <div className="row">
 
-                    <div ref={warp} class="col-md-7 d-flex d-md-block justify-content-center">
+                    <div ref={warp} className="col-md-7 d-flex d-md-block justify-content-center">
                         <Controller  >
-                            <Scene duration={widthSize === '300px' ? "10%" : "300%"} offset={warp.current?.offsetWidth ? warp.current?.offsetWidth / 2.7 : 400} pin>
+                            <Scene duration={widthSize === '300px' ? "2%" : "300%"} offset={warp.current?.offsetWidth ? warp.current?.offsetWidth / 2.7 : 400} pin>
                                 <div>
                                     <div id="rotation" ref={myrotation}></div>
                                 </div>
@@ -142,7 +139,7 @@ const AboutMe = () => {
 
 
                     </div>
-                    <div class="col-md-5 d-flex align-items-center overflow-hidden">
+                    <div className="col-md-5 d-flex align-items-center overflow-hidden">
 
                         <SectionWipes2Styled>
                             <Controller>
@@ -162,11 +159,11 @@ const AboutMe = () => {
                                             <section className="panel blue">
                                                 <div className='text-white'>
                                                     <h1 className='fw-bold title'>About Myself</h1>
-                                                    <p class="text-justify fs-5 pb-5"><span class="d-inline-block lh-base mt-2">Dedicated and efficient
+                                                    <p className="text-justify fs-5 pb-5"><span className="d-inline-block lh-base mt-2">Dedicated and efficient
                                                         front-end
                                                         developer with more than <span className='impo'> 1 year of
                                                             experience </span> in web development. I think I am a very hard worker and <span className='impo'>adaptive to learning new things</span>.  I am one of those candidates who prefer enjoying the work instead of doing it.</span>
-                                                        <span class="d-inline-block my-3 ">I have experience in wordpress bug fixing using css and Dom
+                                                        <span className="d-inline-block my-3 ">I have experience in wordpress bug fixing using css and Dom
                                                         </span>
                                                         <br /> I am a
                                                         student of
@@ -233,13 +230,13 @@ const AboutMe = () => {
                         </SectionWipes2Styled>
                         {/* <div className='text-white'>
                             <h1 className='fw-bold'>About Myself</h1>
-                            <p class="text-justify fs-5 pb-5"><span class="d-inline-block lh-base mt-2">Dedicated and efficient
+                            <p className="text-justify fs-5 pb-5"><span className="d-inline-block lh-base mt-2">Dedicated and efficient
                                 front-end
                                 developer with 1 year of
                                 experience in HTML,
                                 CSS, JS, jQuery plugin, Bootstrap and also have 3 months experience with React
                                 Js.</span>
-                                <span class="d-inline-block my-3">I have experience in wordpress bug fixing with css and Dom
+                                <span className="d-inline-block my-3">I have experience in wordpress bug fixing with css and Dom
                                 </span>
                                 <br /> I am a
                                 student of

@@ -1,16 +1,15 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import SignleName from './SignleName';
 
-const NameAnimation = () => {
-    const name = 'HiIamNaimur'.split('');
+const NameAnimation = ({ phone }) => {
     return (
         <div>
-            <div data-aos="fade-up" data-aos-delay="2200">
+            <div data-aos="fade-up" data-aos-delay={phone ? '1900' : "2200"}>
                 {
                     "Hi,".split('').map((word, i) => <SignleName key={i} word={word}></SignleName>)
                 }
             </div>
-            <div data-aos="fade-up" data-aos-delay="2400">
+            <div data-aos="fade-up" data-aos-delay={phone ? "2200" : "2400"}>
 
                 <div className="d-inline-block">
                     {
@@ -28,7 +27,7 @@ const NameAnimation = () => {
                     }
                 </div>
             </div>
-            <div data-aos="fade-up" data-aos-delay="2500">
+            <div data-aos="fade-up" data-aos-delay={phone ? '2400' : "2500"}>
                 <div className="  d-inline-block">
                     {
                         "Mern ".split('').map((word, i) => <SignleName key={i} word={word}></SignleName>)
