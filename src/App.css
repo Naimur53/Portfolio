@@ -253,14 +253,6 @@ header section
 }
 
 
-.about_me_text_container {
-    z-index: 10;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
 
 /*-------------
  about me section  
@@ -503,7 +495,7 @@ section {
 .bol-3 {
     top: 50%;
     right: 0%;
-    background: rgb(115, 0, 255);
+    /* background: rgb(115, 0, 255); */
 }
 
 .bol-4 {

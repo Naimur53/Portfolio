@@ -7,9 +7,7 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import './Project-img.css'
 const ProjectCard = ({ index, code_link, img, live_link, name, project_type, title, _id, technology }) => {
     const position = index % 2 === 0 ? true : false;
-    const handleImgLoad = () => {
-        console.log(index, 'loding doen');
-    }
+
     return (
         <Grid item data-aos="fade-up" container spacing={0} sx={{
             mb: { xs: 0, }, flexDirection: position ? 'row' : 'row-reverse'
@@ -17,7 +15,6 @@ const ProjectCard = ({ index, code_link, img, live_link, name, project_type, tit
             <Grid item md={7} xs={12} sx={{ width: '100%' }}>
                 <Box
                     className='project-img'
-                    onLoad={handleImgLoad}
                     sx={{ width: '100%', backgroundImage: `url(${img})`, height: '360px', }}
 
                 >

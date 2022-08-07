@@ -4,22 +4,22 @@ import CustomCircular from '../CustomCircular/CustomCircular';
 
 const Skills = () => {
     return (
-        <Grid container spacing={5} >
+        <Grid container spacing={4} >
             <Grid item xs={3}>
 
                 <CustomCircular value={82} text='HTML/Css'></CustomCircular>
 
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                        <CustomCircular value={96} text='Tailwind' half={true}></CustomCircular>
+                        <CustomCircular value={96} text='Tail wind' half={true}></CustomCircular>
 
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <CustomCircular value={89} text='MaterialUi' half={true}></CustomCircular>
+                        <CustomCircular value={89} text='Material Ui' half={true}></CustomCircular>
 
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <CustomCircular value={91} text='Bootstrap' half={true}></CustomCircular>
+                        <CustomCircular value={91} text='Boot strap' half={true}></CustomCircular>
                     </Grid>
                 </Grid>
             </Grid>
@@ -32,6 +32,7 @@ const Skills = () => {
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <CustomCircular value={89} text='Dom' half={true}></CustomCircular>
+                        <CustomCircular value={72} text='Type script' half={true}></CustomCircular>
 
                     </Grid>
                 </Grid>
@@ -40,18 +41,15 @@ const Skills = () => {
                 <CustomCircular text='React' value={90}></CustomCircular>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                        <CustomCircular value={59} text='Firebase' half={true}></CustomCircular>
+                        <CustomCircular value={91} text='Next js' half={true}></CustomCircular>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <CustomCircular value={59} text='Fire base' half={true}></CustomCircular>
 
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <CustomCircular value={96} text='Redux Toolkit' half={true}></CustomCircular>
 
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <CustomCircular value={91} text='Context Api' half={true}></CustomCircular>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <CustomCircular value={91} text='Npm package' half={true}></CustomCircular>
                     </Grid>
                 </Grid>
             </Grid>

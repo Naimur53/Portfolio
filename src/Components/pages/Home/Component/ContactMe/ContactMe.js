@@ -8,6 +8,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Container, Grid } from '@mui/material';
 const ContactMe = () => {
     const form = useRef();
     const [loading, setLoading] = useState(false)
@@ -51,67 +52,67 @@ const ContactMe = () => {
     return (
         <section id='contact' className="contact-section py-5">
             <div className="bol-4 bol"></div>
-            <div className="container  content-container">
-                <div className="row  " data-aos="fade-up">
-                    <div className="col-md-6  ">
+            <Container className="  content-container">
+                <Grid container data-aos="fade-up" spacing={4}>
+                    <Grid md={6} item xs={12}>
                         <form ref={form} id="contact-form" onSubmit={sendEmail}>
-                            <div className="row">
-                                <div className="col-md-6">
+                            <Grid container spacing={4}>
+                                <Grid item xs={12} md={6}>
                                     <input required type="hidden" name="contact_number" />
-                                    <input className="w-100 p-3 rounded" required type="text" placeholder="Name"
+                                    <input className="w-full   p-3 rounded" required type="text" placeholder="Name"
                                         name="user_name" />
-                                </div>
-                                <div className="col-md-6">
-                                    <input className="w-100 p-3 rounded" required type="email" placeholder="Email"
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                    <input className="w-full p-3 rounded" required type="email" placeholder="Email"
                                         name="user_email" />
-                                </div>
-                                <div className="col-md-12">
-                                    <textarea className="w-100 mt-4 p-3 rounded" rows="7" name="message"
+                                </Grid>
+                                <Grid item xs={12} md={12}>
+                                    <textarea className="w-full p-3 rounded" rows="7" name="message"
                                         placeholder="Your message"></textarea>
-                                </div>
-                            </div>
+                                </Grid>
+                            </Grid>
                             <div className="d-flex justify-content-center mt-3">
 
                                 {
-                                    loading ? <input className="text-center rounded text-white px-3 py-2 " value="Sending" type='button' /> : <input className="rounded text-white mb-2 px-3 py-2 " type="submit" value="Send Message" />
+                                    loading ? <input className="text-center rounded text-white mb-2 px-3 py-2 " value="Sending" type='button' /> : <input className="rounded text-white mb-2 px-3 py-2 " type="submit" value="Send Message" />
                                 }
                             </div>
                         </form>
 
-                    </div>
-                    <div className="col-md-6 ">
-                        <div className="row g-4">
-                            <div className="col-md-12">
-                                <div className="p-2 py-4 contact-box d-flex flex-column align-items-center justify-content ">
+                    </Grid>
+                    <Grid item md={6} xs={12}>
+                        <Grid container spacing={4}>
+                            <Grid item xs={12}>
+                                <div className="p-2 py-4 contact-box flex flex-col items-center  ">
                                     <div
-                                        className="contact-icon-wrap d-flex justify-content-center align-items-center rounded-circle">
+                                        className="contact-icon-wrap flex justify-center items-center rounded-full">
 
                                         <LocationOnIcon></LocationOnIcon>
                                     </div>
                                     <p className="mt-3">Munshigonj, Dhaka, Bangladesh</p>
 
                                 </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="p-2 py-4 contact-box d-flex flex-column align-items-center justify-content ">
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <div className="p-2 py-4 contact-box flex flex-col items-center h-full ">
                                     <div
-                                        className="contact-icon-wrap d-flex justify-content-center align-items-center rounded-circle">
+                                        className="contact-icon-wrap flex justify-center items-center rounded-full">
 
                                         <MailOutlineIcon></MailOutlineIcon>
                                     </div>
                                     <p className="mt-3">naimurrhman53@gmail.com</p>
 
                                 </div>
-                            </div>
-                            <div className="col-md-6">
+                            </Grid>
+                            <Grid item xs={12} md={6}>
                                 <div
-                                    className="p-2 pt-4 h-100 contact-box d-flex flex-column align-items-center justify-content ">
+                                    className="p-2 pt-4 h-100 contact-box flex flex-col items-center  ">
                                     <div
-                                        className="contact-icon-wrap d-flex justify-content-center align-items-center rounded-circle">
+                                        className="contact-icon-wrap flex justify-center items-center rounded-full">
 
                                         <ConnectWithoutContactIcon></ConnectWithoutContactIcon>
                                     </div>
-                                    <ul className="social d-flex justify-content-center ps-0 w-100 mt-3">
+                                    <ul className="social  flex justify-center pl-0 w-full mt-3">
                                         <li><a href="https://github.com/Naimur53"> <GitHubIcon></GitHubIcon>
                                         </a></li>
                                         <li><a href="https://www.facebook.com/naimur.rahman.39501789"><FacebookIcon></FacebookIcon></a></li>
@@ -121,12 +122,12 @@ const ContactMe = () => {
                                     </ul>
 
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </Grid>
+                        </Grid>
+                    </Grid>
 
-                </div>
-            </div>
+                </Grid>
+            </Container>
             <ToastContainer />
         </section>
     );

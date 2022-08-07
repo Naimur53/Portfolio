@@ -7,7 +7,7 @@ const CustomCircular = ({ value, half, text }) => {
     const options = useMemo(() => {
         return {
             root: null,
-            rootMargin: '-50px',
+            rootMargin: '-10px',
             threshold: window.innerWidth > 500 ? .1 : 1
         }
     }, [])
@@ -39,7 +39,7 @@ const CustomCircular = ({ value, half, text }) => {
 
 
             />
-            <p ref={targetRef} style={{ fontSize: half ? '10px' : '10px', marginTop: half ? '-10px' : '10px' }} className={`text-center   font-mono ${half ? 'mb-2' : 'mb-5'} `}>{text}</p>
+            <p ref={targetRef} style={{ fontSize: '10px', marginTop: half ? '-10px' : '10px', }} className={`text-center line-break-anywhere  font-mono ${half ? 'mb-2' : 'mb-5'} `}>{text}</p>
         </>
     );
 };

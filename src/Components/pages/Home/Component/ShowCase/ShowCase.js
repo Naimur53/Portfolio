@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import React from 'react';
 
 const ShowCase = () => {
@@ -5,13 +6,13 @@ const ShowCase = () => {
         <section>
             <div className="bol-5 bol"></div>
             <div className="bol-6 bol"></div>
-            <div className="container py-sm-5 py-md-5 mb-5">
+            <Container className="py-5  mb-5">
                 <div className=" cursor-full showcase-main-wrap">
                     <div className="showcase-item-container">
                         <div className=" showcase-item-wrap " data-aos="fade-up">
                             <a className=" text-white" rel="noreferrer" target="_blank" href="https://github.com/Naimur53/Contact-Us-Page-YT">
                                 <div className="showcase-img-wrap">
-                                    <img className="img-fluid" src="https://i.ibb.co/2YwjJsK/contactme.jpg" alt="" />
+                                    <img loading="lazy" className="img-fluid" src="https://i.ibb.co/2YwjJsK/contactme.jpg" alt="" />
                                 </div>
                                 <h5 className="text-center pt-4">Contact Us form</h5>
                             </a>
@@ -21,7 +22,7 @@ const ShowCase = () => {
                         <div className=" showcase-item-wrap ">
                             <a className=" text-white" rel="noreferrer" target="_blank" href="https://github.com/Naimur53/Gassie-Icon">
                                 <div className="showcase-img-wrap">
-                                    <img className="img-fluid" src="https://i.ibb.co/sQxj9ph/icon.jpg" alt="" />
+                                    <img loading="lazy" className="img-fluid" src="https://i.ibb.co/sQxj9ph/icon.jpg" alt="" />
                                 </div>
                                 <h5 className="text-center pt-4">social icons</h5>
                             </a>
@@ -31,7 +32,7 @@ const ShowCase = () => {
                         <div className="showcase-item-wrap ">
                             <a className="text-white" rel="noreferrer" target="_blank" href="https://github.com/Naimur53/shoe-card">
                                 <div className="showcase-img-wrap">
-                                    <img className="img-fluid" src="https://i.ibb.co/k1ysBXv/shoeCard.jpg" alt="" />
+                                    <img loading="lazy" className="img-fluid" src="https://i.ibb.co/k1ysBXv/shoeCard.jpg" alt="" />
                                 </div>
                                 <h5 className="text-center pt-4">shoe card</h5>
                             </a>
@@ -41,7 +42,7 @@ const ShowCase = () => {
                         <div className=" showcase-item-wrap ">
                             <a className="  text-white" rel="noreferrer" target="_blank" href="https://github.com/Naimur53/black-friday">
                                 <div className="showcase-img-wrap">
-                                    <img className="img-fluid" src="https://i.ibb.co/zHjsgzC/black-Friday.jpg" alt="" />
+                                    <img loading="lazy" className="img-fluid" src="https://i.ibb.co/zHjsgzC/black-Friday.jpg" alt="" />
                                 </div>
                                 <h5 className="text-center pt-4">black Friday banner</h5>
                             </a>
@@ -51,7 +52,7 @@ const ShowCase = () => {
                         <div className=" showcase-item-wrap ">
                             <a className="  text-white" rel="noreferrer" target="_blank" href="https://github.com/Naimur53/masterTyping">
                                 <div className="showcase-img-wrap">
-                                    <img className="img-fluid" src="https://i.ibb.co/23mQTXC/mastertype.jpg" alt="" />
+                                    <img loading="lazy" className="img-fluid" src="https://i.ibb.co/23mQTXC/mastertype.jpg" alt="" />
                                 </div>
                                 <h5 className="text-center pt-4">master type</h5>
                             </a>
@@ -61,7 +62,7 @@ const ShowCase = () => {
                         <div className=" showcase-item-wrap ">
                             <a className="  text-white" rel="noreferrer" target="_blank" href="https://github.com/Naimur53/am-i-responsive">
                                 <div className="showcase-img-wrap">
-                                    <img className="img-fluid" src="https://i.ibb.co/YbXbV83/amiresposive.jpg" alt="" />
+                                    <img loading="lazy" className="img-fluid" src="https://i.ibb.co/YbXbV83/amiresposive.jpg" alt="" />
                                 </div>
                                 <h5 className="text-center pt-4">Responsive checker</h5>
                             </a>
@@ -113,7 +114,7 @@ const ShowCase = () => {
                             <a className="  text-white" target="_blank"
                                 href="https://github.com/Naimur53/Glassmorphism-Login-Form" rel="noreferrer" >
                                 <div className="showcase-img-wrap">
-                                    <img className="img-fluid" src="https://i.ibb.co/wdXGsw6/login-Form.jpg" alt="" />
+                                    <img loading="lazy" className="img-fluid" src="https://i.ibb.co/wdXGsw6/login-Form.jpg" alt="" />
                                 </div>
                                 <h5 className="text-center pt-4">Login form</h5>
                             </a>
@@ -123,7 +124,7 @@ const ShowCase = () => {
                         <div className=" showcase-item-wrap ">
                             <a className="  text-white" target="_blank" href="https://github.com/Naimur53/card-3d" rel='noreferrer'>
                                 <div className="showcase-img-wrap">
-                                    <img className="img-fluid" src="https://i.ibb.co/23qW6xV/Screenshot-2022-01-25-16-30-02.jpg"
+                                    <img loading="lazy" className="img-fluid" src="https://i.ibb.co/23qW6xV/Screenshot-2022-01-25-16-30-02.jpg"
                                         alt="" />
                                 </div>
                                 <h5 className="text-center pt-4">Card 3D</h5>
@@ -132,7 +133,7 @@ const ShowCase = () => {
                     </div>
                 </div>
 
-            </div>
+            </Container>
         </section>
     );
 };

@@ -1,11 +1,14 @@
+import { Container, IconButton } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { allData } from '../../../MangeState/dataSlice';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBar = () => {
     const [change, setChange] = useState(false)
-    const { windowLoad } = useSelector(allData)
+    const { windowLoad } = useSelector(allData);
+    const [expand, setExpand] = useState(false);
     useEffect(() => {
         if (window.innerWidth < 500) {
             setChange(true)
@@ -18,25 +21,38 @@ const NavBar = () => {
                 if (window.innerWidth > 500) {
 
                     if (value > 500) {
-                        // nav.style.background = 'rgba(0, 0, 0,0.3)';
-                        // nav.style.backdropFilter = 'blur(5px)';
                         setChange(true)
                     }
                     else {
                         setChange(false)
-                        // nav.style.background = 'transparent';
-                        // nav.style.backdropFilter = 'blur(0)';
                     }
                 }
 
             }
         }
     }, [])
-
+    const Ul = <ul className=" flex flex-col md:flex-row   py-2   mt-4 md:mt-0 mb-2 lg:mb-0  items-center justify-center">
+        <li className="px-2" data-aos="fade-down" data-aos-delay="100" data-aos-easing="linear">
+            <NavLink to='/home' className="nav-link active font-mono" aria-current="page">Home</NavLink>
+        </li>
+        <li className="px-2" data-aos="fade-down" data-aos-delay="200" data-aos-easing="linear">
+            <a className="nav-link font-mono" href="/home#aboutme">About me</a>
+        </li>
+        <li className="px-2 " data-aos="fade-down" data-aos-delay="300" data-aos-easing="linear" >
+            <a className="nav-link font-mono" href="/home#contact">Contact me</a>
+        </li>
+        <li className="px-2" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="400">
+            <NavLink className="nav-link font-mono" to='/blog'>Blog</NavLink>
+        </li>
+        <li className="nav-item mt-3 md:mt-0" data-aos="fade-down" data-aos-delay="500" data-aos-easing="linear" >
+            <a target="_blank" className="nav-link font-mono resume ml-2"
+                href="https://drive.google.com/file/d/1WKRO1KWgteJaALwgcv3Q7u59dq-BMkUX/view" without rel="noreferrer">Resume</a>
+        </li>
+    </ul>
     return (
         <div>
-            <nav id="nav" className="navbar navbar-expand-lg fixed-top navbar-dark  p-0 " data-aos="fade-down" data-aos-duration="3000" style={{ background: change ? 'rgba(0, 0, 0,0.3)' : 'transparent', width: '100vw', backdropFilter: change ? 'blur(5px)' : 'blur(0)', }}>
-                <div className='container'>
+            <nav id="nav" className="p-0 flex fixed top-0 z-50" style={{ background: change ? 'rgba(0, 0, 0,0.3)' : 'transparent', width: '100vw', backdropFilter: change ? 'blur(5px)' : 'blur(0)', }}>
+                <Container maxWidth='xl' sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <a className="navbar-brand" data-aos="fade-right" data-aos-delay="200" href="#">
                         <svg id="svg_wrapper" width="585" height="362" viewBox="0 0 585 362" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -49,34 +65,29 @@ const NavBar = () => {
                         </svg>
 
                     </a>
-                    <button className="navbar-toggler " data-aos="fade-left" data-aos-delay="200" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav py-2 ms-auto mt-4 mt-md-0 mb-2 mb-lg-0 d-flex align-items-center">
-                            <li className="nav-item">
-                                <NavLink to='/home' data-aos="fade-down" data-aos-delay="100" data-aos-easing="linear" className="nav-link active font-mono" aria-current="page">Home</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link font-mono" data-aos="fade-down" data-aos-delay="200" data-aos-easing="linear" href="/home#aboutme">About me</a>
-                            </li>
-                            <li className="nav-item ">
-                                <a className="nav-link font-mono" data-aos="fade-down" data-aos-delay="300" data-aos-easing="linear" href="/home#contact">Contact me</a>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link font-mono" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="400" to='/blog'>Blog</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <a target="_blank" data-aos="fade-down" data-aos-delay="500" data-aos-easing="linear" className="nav-link font-mono resume ms-2"
-                                    href="https://drive.google.com/file/d/1WKRO1KWgteJaALwgcv3Q7u59dq-BMkUX/view">Resume</a>
-                            </li>
+                    <div className='relative' >
 
-                        </ul>
+                        <div data-aos="fade-left" data-aos-delay="200" className="inline-block md:hidden relative">
+
+                            <IconButton onClick={() => { setExpand(!expand) }}>
+                                <MenuIcon></MenuIcon>
+                            </IconButton>
+                            {
+                                expand ? <div style={{ background: change ? 'rgba(0, 0, 0,0.3)' : 'transparent', backdropFilter: change ? 'blur(5px)' : 'blur(0)', }} className="absolute rounded-md top-10 p-5 right-0 z-50 bg-black">
+                                    <div className="w-52">
+                                        {Ul}
+                                    </div>
+                                </div> : <div></div>
+                            }
+                        </div>
+                        <div className="hidden md:block">
+
+                            {Ul}
+
+                        </div>
 
                     </div>
-                </div>
+                </Container>
             </nav>
         </div>
     );

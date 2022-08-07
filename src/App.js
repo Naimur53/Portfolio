@@ -1,5 +1,4 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/pages/Home/Home';
 import NavBar from './Components/pages/NavBar/NavBar';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,7 +21,6 @@ function App() {
   const { windowLoad } = useSelector(allData);
   const [look, setLook] = useState(true);
   useEffect(() => {
-    // window.focus = function () { setLook(true) }
     var vis = (function () {
       var stateKey, eventKey, keys = {
         hidden: "visibilitychange",
@@ -42,7 +40,6 @@ function App() {
       }
     })();
     vis(function () {
-      document.title = vis() ? 'Visible' : 'Not visible';
       setLook(vis() ? true : false)
     });
 

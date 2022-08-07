@@ -4,7 +4,7 @@ import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import styled from 'styled-components';
 import Skills from '../Skills/Skills';
-import { Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 const SectionWipes2Styled = styled.div`
   overflow: hidden;
   width:100%;
@@ -66,6 +66,7 @@ const AboutMe = () => {
             { label: 'Stripe' },
             { label: 'Javascript' },
             { label: 'npm' },
+            { label: 'Typescript' },
             { label: 'Context API,' },
             { label: 'No SQL' },
             { label: 'Css' },
@@ -93,14 +94,14 @@ const AboutMe = () => {
             fontColor: '#f51a75',
             fontWeight: 'bold',//bold
             fontStyle: 'normal',//italic 
-            fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+            fontStretch: 'normal',
             fontToUpperCase: false,
             tooltipFontFamily: 'Oswald, Arial, sans-serif',
             tooltipFontSize: '11',
             tooltipFontColor: '#fff',
             tooltipFontWeight: 'normal',//bold
             tooltipFontStyle: 'normal',//italic 
-            tooltipFontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+            tooltipFontStretch: 'normal',
             tooltipFontToUpperCase: false,
             tooltipTextAnchor: 'middle',
             tooltipDiffX: 0,
@@ -123,23 +124,25 @@ const AboutMe = () => {
 
             {/* <div className="bol-1 bol"></div>
             <div className="bol-2 bol"></div> */}
-            <div className="container ">
+            <Container className='bg -red-400'>
 
-                <div className="row">
+                <Grid container>
+                    <Grid md={7} xs={12} items>
 
-                    <div ref={warp} className="col-md-7 d-flex d-md-block justify-content-center">
-                        <Controller  >
-                            <Scene duration={widthSize === '300px' ? "2%" : "300%"} offset={warp.current?.offsetWidth ? warp.current?.offsetWidth / 2.7 : 400} pin>
-                                <div>
-                                    <div id="rotation" ref={myrotation}></div>
-                                </div>
-                            </Scene>
-                        </Controller>
+                        <div ref={warp} className="flex md:block justify-center">
+                            <Controller  >
+                                <Scene duration={widthSize === '300px' ? "2%" : "300%"} offset={warp.current?.offsetWidth ? warp.current?.offsetWidth / 2.2 : 400} pin>
+                                    <div>
+                                        <div id="rotation" ref={myrotation}></div>
+                                    </div>
+                                </Scene>
+                            </Controller>
 
 
 
-                    </div>
-                    <div className="col-md-5 d-flex align-items-center overflow-hidden">
+                        </div>
+                    </Grid>
+                    <Grid md={5} xs={12} items className=" flex items-center overflow-hidden">
 
                         <SectionWipes2Styled>
                             <Controller>
@@ -158,11 +161,11 @@ const AboutMe = () => {
 
                                             <section className="panel blue">
                                                 <div className='text-white'>
-                                                    <h1 className='fw-bold title'>About Myself</h1>
+                                                    <h1 className='font-bold title text-2xl md:text-5xl mb-2'>About Myself</h1>
                                                     <p className="text-justify fs-5 pb-5"><span className="d-inline-block lh-base mt-2">Dedicated and efficient
-                                                        front-end
-                                                        developer with more than <span className='impo'> 1 year of
-                                                            experience </span> in web development. I think I am a very hard worker and <span className='impo'>adaptive to learning new things</span>.  I am one of those candidates who prefer enjoying the work instead of doing it.</span>
+                                                        full-stack
+                                                        developer with almost <span className='impo'> 2 years of
+                                                            experience </span> in web development.I have worked on a project basis job. I am keeping myself updated and<span className='impo'> adaptive to learning new things</span>.  I am one of those candidates who prefer enjoying the work instead of doing it.</span>
                                                         <span className="d-inline-block my-3 ">I have experience in wordpress bug fixing using css and Dom
                                                         </span>
                                                         <br /> I am a
@@ -174,13 +177,12 @@ const AboutMe = () => {
                                             </section>
                                         </Tween>
                                         <Tween
-                                            from={{ x: '150%' }}
+                                            from={{ x: '170%' }}
                                             to={{ x: '0%' }}
                                         >
                                             <section className="panel green">
                                                 <div>
-                                                    <h1 className='fw-bold mb-4  title'>Skills </h1>
-
+                                                    <h1 className='font-bold title text-2xl md:text-5xl mb-3'>Skills </h1>
                                                     <Skills></Skills>
                                                 </div>
                                             </section>
@@ -192,7 +194,7 @@ const AboutMe = () => {
                                             <section className="panel black">
                                                 <Grid container >
                                                     <Grid item xs={12}>
-                                                        <h1 className='fw-bold  title'>Achievement </h1>
+                                                        <h1 className='font-bold title text-2xl md:text-5xl mb-2'>Achievement </h1>
                                                         <p style={{ fontSize: '18px' }} className='my-3   mb-4'> I have done MERN stack course on Programing hero where I was <span className='impo'>top 5%</span> of the class and got <span className='impo'>Black Belt</span> Title as web developer</p>
 
                                                     </Grid>
@@ -228,27 +230,11 @@ const AboutMe = () => {
                                 </Scene>
                             </Controller>
                         </SectionWipes2Styled>
-                        {/* <div className='text-white'>
-                            <h1 className='fw-bold'>About Myself</h1>
-                            <p className="text-justify fs-5 pb-5"><span className="d-inline-block lh-base mt-2">Dedicated and efficient
-                                front-end
-                                developer with 1 year of
-                                experience in HTML,
-                                CSS, JS, jQuery plugin, Bootstrap and also have 3 months experience with React
-                                Js.</span>
-                                <span className="d-inline-block my-3">I have experience in wordpress bug fixing with css and Dom
-                                </span>
-                                <br /> I am a
-                                student of
-                                Brahmanbaria Polytechnic Institute studying in computer Technology 3rd semester.
+                    </Grid>
 
-                            </p>
-                        </div> */}
-                    </div>
+                </Grid>
 
-                </div>
-
-            </div>
+            </Container>
         </section>
     );
 };
